@@ -5,6 +5,11 @@ import { Award, Users, Globe, TrendingUp } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
+import fleetYellowTruck from "@/assets/fleet-yellow-truck.jpg";
+import fleetContainers from "@/assets/fleet-containers.jpg";
+import fleetRenaultVan from "@/assets/fleet-renault-van.jpg";
+import fleetMercedesFront from "@/assets/fleet-mercedes-front.jpg";
+import fleetMercedesSide from "@/assets/fleet-mercedes-side.jpg";
 
 const About = () => {
   return (
@@ -109,6 +114,53 @@ const About = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Fleet */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Fleet</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetContainers} 
+                alt="International freight truck with shipping containers"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetMercedesFront} 
+                alt="Mercedes Actros freight truck"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetMercedesSide} 
+                alt="Mercedes Actros truck with tarp trailer"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetYellowTruck} 
+                alt="IVECO delivery truck for Spanish road transport"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetRenaultVan} 
+                alt="Renault relocation van for business moves"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <p className="text-center text-muted-foreground mt-8 max-w-3xl mx-auto">
+            Our modern fleet includes vehicles ranging from small vans to full articulated trucks, all maintained to the highest standards for safe and reliable transport across Europe.
+          </p>
         </div>
       </section>
 
