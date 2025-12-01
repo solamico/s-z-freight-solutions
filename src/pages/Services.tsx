@@ -9,6 +9,9 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { ServicesFaqSchema } from "@/components/StructuredData";
 import heroImage from "@/assets/hero-truck.jpg";
+import fleetContainers from "@/assets/fleet-containers.jpg";
+import fleetMercedesFront from "@/assets/fleet-mercedes-front.jpg";
+import fleetYellowTruck from "@/assets/fleet-yellow-truck.jpg";
 
 const Services = () => {
   const services = [
@@ -203,6 +206,50 @@ const Services = () => {
       </section>
 
       <ServicesFaqSchema />
+
+      {/* Fleet Showcase */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Fleet</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Modern vehicles maintained to the highest standards for safe, reliable transport across Europe
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetContainers} 
+                alt="International freight truck with shipping containers"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">International Freight</p>
+              </div>
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetMercedesFront} 
+                alt="Mercedes Actros freight truck"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">European Road Transport</p>
+              </div>
+            </div>
+            <div className="relative h-64 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <img 
+                src={fleetYellowTruck} 
+                alt="IVECO delivery truck for Spanish road transport"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">Spanish Road Transport</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4 max-w-5xl">
