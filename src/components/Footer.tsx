@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from "lucide-react";
+import { BUSINESS_INFO } from "@/lib/constants";
+import sziLogo from "@/assets/szi-group-logo.jpg";
 
 export const Footer = () => {
+  const businessInfo = BUSINESS_INFO;
+
   return (
     <footer className="border-t bg-muted/30">
       <div className="container mx-auto px-4 py-12">
@@ -9,16 +13,18 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
-                <span className="text-xl font-bold text-white">S&Z</span>
-              </div>
+              <img
+                src={sziLogo}
+                alt="S&Z Trading / SZI Group logo"
+                className="h-10 w-auto rounded-lg bg-white object-contain shadow-sm"
+              />
               <div>
-                <div className="font-bold text-trust-navy">S&Z Trading</div>
-                <div className="text-xs text-muted-foreground">International</div>
+                <div className="font-bold text-trust-navy">S&Z TRADING</div>
+                <div className="text-xs text-muted-foreground uppercase">International S.C.A.</div>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">
-              Professional freight and logistics services across Spain and Europe since 2010.
+              {businessInfo.tagline} across {businessInfo.country} and Europe since {businessInfo.foundedYear}.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -39,7 +45,7 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li><Link to="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">Our Services</Link></li>
               <li><Link to="/get-quote" className="text-sm text-muted-foreground hover:text-primary transition-colors">Get Quote</Link></li>
-              <li><Link to="/track" className="text-sm text-muted-foreground hover:text-primary transition-colors">Track Shipment</Link></li>
+              <li><Link to="/relocation" className="text-sm text-muted-foreground hover:text-primary transition-colors">Relocation</Link></li>
               <li><Link to="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-primary transition-colors">Contact</Link></li>
             </ul>
@@ -63,22 +69,28 @@ export const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Calle Principal 123, 28001 Madrid, Spain</span>
+                <span>
+                  {businessInfo.city}, {businessInfo.country}
+                </span>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+34900123456" className="hover:text-primary transition-colors">+34 900 123 456</a>
+                <a href={`tel:${businessInfo.phoneRaw}`} className="hover:text-primary transition-colors">
+                  {businessInfo.phone}
+                </a>
               </li>
               <li className="flex items-center space-x-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:info@sztrading.com" className="hover:text-primary transition-colors">info@sztrading.com</a>
+                <a href={`mailto:${businessInfo.email}`} className="hover:text-primary transition-colors">
+                  {businessInfo.email}
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} S&Z Trading International. All rights reserved. | Company Reg: B-12345678 | VAT: ES12345678A</p>
+          <p>&copy; {new Date().getFullYear()} S&Z TRADING INTERNATIONAL S.C.A. All rights reserved.</p>
         </div>
       </div>
     </footer>

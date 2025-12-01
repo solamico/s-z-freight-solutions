@@ -4,14 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Award, Users, Globe, TrendingUp } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
-        title="About Us - European Freight Logistics Since 2010"
-        description="S&Z Trading International - 14 years of reliable freight transport across Spain and Europe. ISO 9001 certified with 98% on-time delivery."
-        keywords="about logistics company, freight company Spain, European logistics, S&Z Trading"
+        title="About Us - S&Z TRADING INTERNATIONAL S.C.A."
+        description="S&Z TRADING INTERNATIONAL S.C.A. - Your trusted logistics partner in Spain and Europe. Professional freight and relocation services since 2022."
+        keywords="about logistics company, freight company Spain, European logistics, S&Z Trading International"
       />
       <Navigation />
       <WhatsAppButton />
@@ -19,10 +20,13 @@ const About = () => {
       {/* Hero */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
+          <div className="mb-4 text-left">
+            <PageBreadcrumbs items={[{ label: "Home", to: "/" }, { label: "About" }]} />
+          </div>
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About S&Z Trading International</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">About S&Z TRADING INTERNATIONAL S.C.A.</h1>
             <p className="text-xl text-muted-foreground">
-              Your trusted partner in European freight logistics since 2010
+              Your trusted logistics partner in Spain and Europe since 2022
             </p>
           </div>
         </div>
@@ -34,13 +38,13 @@ const About = () => {
           <div className="prose prose-lg max-w-none">
             <h2 className="text-3xl font-bold mb-6">Our Story</h2>
             <p className="text-lg text-muted-foreground mb-4">
-              Founded in Madrid in 2010, S&Z Trading International began with a simple mission: to provide reliable, cost-effective freight solutions for businesses trading across Spain and Europe. What started as a small road transport operation has grown into a comprehensive logistics provider serving over 500 companies across 25+ countries.
+              Founded in 2022, S&Z TRADING INTERNATIONAL S.C.A. has quickly established itself as a reliable logistics provider in Spain and Europe. Starting with a focus on road transport, we've expanded our services to include comprehensive logistics solutions for businesses of all sizes across the region.
             </p>
             <p className="text-lg text-muted-foreground mb-4">
-              We've built our reputation on three pillars: reliability, transparency, and customer service. Every shipment is tracked in real-time, every client has a dedicated account manager, and every promise is kept. This approach has earned us an industry-leading 98% on-time delivery rate and partnerships with some of Europe's largest manufacturers and distributors.
+              We've built our reputation on three pillars: reliability, transparency, and customer service. Every shipment is handled with care, and every client receives personalized attention. This approach has helped us build strong relationships with businesses across various industries.
             </p>
             <p className="text-lg text-muted-foreground">
-              Today, our fleet of modern vehicles and network of trusted partners allows us to offer everything from same-day Spanish deliveries to complex international supply chain solutions. But our core values remain unchanged: treat every shipment like it's our own.
+              Our growing fleet of modern vehicles and network of trusted partners enables us to offer a wide range of services, from local deliveries to international freight solutions. We're committed to providing efficient and cost-effective logistics services while maintaining the highest standards of quality and customer satisfaction.
             </p>
           </div>
         </div>
@@ -55,7 +59,7 @@ const About = () => {
               {
                 icon: Award,
                 title: "Certified Quality",
-                description: "ISO 9001 certified with full insurance coverage up to €5M per shipment"
+                description: "ISO 9001 certified with full insurance coverage up to €250K per shipment"
               },
               {
                 icon: Users,
@@ -94,8 +98,8 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto text-center">
             {[
-              { value: "14", label: "Years in Business" },
-              { value: "500+", label: "Active Clients" },
+              { value: "3+", label: "Years in Business" },
+              { value: "200+", label: "Active Clients" },
               { value: "25+", label: "Countries Served" },
               { value: "98%", label: "On-Time Delivery" }
             ].map((stat, index) => (
@@ -127,14 +131,14 @@ const About = () => {
             </Card>
             <Card>
               <CardContent className="pt-6">
-                <div className="text-2xl font-bold mb-2">IATA Member</div>
-                <p className="text-sm text-muted-foreground">International Air Transport</p>
+                <div className="text-2xl font-bold mb-2">Chep Associate</div>
+                <p className="text-sm text-muted-foreground">CX/HX/Timo/Trans</p>
               </CardContent>
             </Card>
           </div>
           <div className="mt-8 text-center text-sm text-muted-foreground">
-            <p>Company Registration: B-12345678 | VAT: ES12345678A</p>
-            <p>Fully insured with coverage up to €5,000,000 per shipment</p>
+            <p>Company Registration: VAT/NIF NIF: ESF70700547</p>
+            <p className="font-bold text-base">Fully insured with coverage up to €250k per shipment</p>
           </div>
         </div>
       </section>

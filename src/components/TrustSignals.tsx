@@ -1,26 +1,26 @@
-import { Shield, Award, Users, Clock } from "lucide-react";
+import { Award, Users, Globe, TrendingUp } from "lucide-react";
 
 export const TrustSignals = () => {
   const signals = [
     {
-      icon: Shield,
-      value: "€5M",
-      label: "Insurance Coverage",
+      icon: Award,
+      value: "3+",
+      label: "Years in Business",
     },
     {
       icon: Award,
-      value: "ISO 9001",
-      label: "Certified Quality",
+      value: "200+",
+      label: "Active Clients",
     },
     {
       icon: Users,
-      value: "500+",
-      label: "Business Clients",
+      value: "25+",
+      label: "Countries Served",
     },
     {
-      icon: Clock,
-      value: "14 Years",
-      label: "In Operation",
+      icon: TrendingUp,
+      value: "98%",
+      label: "On-Time Delivery",
     },
   ];
 
