@@ -6,6 +6,9 @@ import { Truck, Globe, Warehouse, Ship, TrendingUp, Package } from "lucide-react
 import { Link } from "react-router-dom";
 import { SEO } from "@/components/SEO";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
+import { ServicesFaqSchema } from "@/components/StructuredData";
+import heroImage from "@/assets/hero-truck.jpg";
 
 const Services = () => {
   const services = [
@@ -16,7 +19,7 @@ const Services = () => {
       description: "Complete nationwide coverage across Spain with flexible delivery options for all cargo types.",
       coverage: "All Spanish provinces and major cities",
       deliveryTime: "24-48 hours nationwide",
-      priceRange: "€150 - €800",
+      priceRange: "€150 - €800 per shipment (typical range)",
       benefits: [
         "Next-day delivery to major cities",
         "Real-time GPS tracking",
@@ -31,7 +34,7 @@ const Services = () => {
       description: "Seamless cross-border logistics connecting Spain with 25+ European countries.",
       coverage: "EU27 plus UK, Switzerland, Norway",
       deliveryTime: "2-7 days depending on destination",
-      priceRange: "€450 - €2,500",
+      priceRange: "€450 - €2,500 per shipment (typical range)",
       benefits: [
         "Customs clearance assistance",
         "Multi-drop delivery routes",
@@ -46,7 +49,7 @@ const Services = () => {
       description: "Professional office and business relocations with minimal downtime and maximum care.",
       coverage: "Spain and major European cities",
       deliveryTime: "Scheduled based on project",
-      priceRange: "€800 - €5,000",
+      priceRange: "€800 - €5,000 per relocation project",
       benefits: [
         "Pre-move planning consultation",
         "IT equipment specialized handling",
@@ -61,7 +64,7 @@ const Services = () => {
       description: "Worldwide ocean and air freight services for international trade and distribution.",
       coverage: "150+ countries worldwide",
       deliveryTime: "5-30 days (air/sea)",
-      priceRange: "€1,200 - €15,000",
+      priceRange: "€1,200 - €15,000 per international shipment",
       benefits: [
         "Dedicated customs broker support",
         "FCL and LCL container options",
@@ -91,7 +94,7 @@ const Services = () => {
       description: "Expert analysis and optimization of your logistics operations to reduce costs and improve efficiency.",
       coverage: "Remote and on-site consultations",
       deliveryTime: "Project-based",
-      priceRange: "€500 - €5,000",
+      priceRange: "€500 - €5,000 per project",
       benefits: [
         "Cost reduction analysis",
         "Route optimization strategies",
@@ -114,11 +117,23 @@ const Services = () => {
       {/* Hero Section */}
       <section className="py-16 bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
-            <p className="text-xl text-muted-foreground">
-              Comprehensive freight and logistics solutions designed for modern businesses. Choose the service that fits your needs.
-            </p>
+          <div className="mb-4 text-left">
+            <PageBreadcrumbs items={[{ label: "Home", to: "/" }, { label: "Services" }]} />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="max-w-xl mx-auto md:mx-0 text-center md:text-left">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
+              <p className="text-xl text-muted-foreground">
+                Comprehensive freight and logistics solutions designed for modern businesses. Choose the service that fits your lanes, cargo and budget.
+              </p>
+            </div>
+            <div className="relative h-56 md:h-64 lg:h-72 rounded-xl overflow-hidden shadow-md">
+              <img
+                src={heroImage}
+                alt="Fleet of modern freight trucks"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -184,6 +199,75 @@ const Services = () => {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <ServicesFaqSchema />
+
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Find quick answers about our freight, logistics, and relocation services. If you don’t see your question here, our team is happy to help.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold">General Logistics</h3>
+              <div>
+                <h4 className="font-semibold mb-1">What regions do you cover?</h4>
+                <p className="text-sm text-muted-foreground">
+                  We are based in Spain and operate across major European corridors. Our core network covers Spain, Portugal, France, Germany, the Benelux countries, Italy, and the UK, with partners providing onward connections to the rest of Europe.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">What types of goods do you transport?</h4>
+                <p className="text-sm text-muted-foreground">
+                  We handle palletised goods, full and part truck loads, machinery, retail stock, e-commerce shipments, and general industrial cargo. For hazardous, temperature-controlled, or unusual loads, we confirm the safest solution for your case.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Are my shipments insured?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes. All shipments are covered by standard carrier liability, and we can arrange extended insurance for high-value or sensitive cargo on request. Share the approximate value when requesting a quote so we can propose the right cover.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">How do I request a quote?</h4>
+                <p className="text-sm text-muted-foreground">
+                  You can request a quote via our online Get Quote form, by emailing us your shipment details, or by calling our team. Provide origin, destination, dates, approximate weight or volume, and any special requirements.
+                </p>
+              </div>
+            </div>
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold">Moving &amp; Relocation</h3>
+              <div>
+                <h4 className="font-semibold mb-1">What kind of relocations do you handle?</h4>
+                <p className="text-sm text-muted-foreground">
+                  We manage business relocations of all sizes, from small offices to warehouses and light industrial sites. Depending on your needs, we can also support selected residential moves linked to corporate relocations.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Can you move us outside normal business hours?</h4>
+                <p className="text-sm text-muted-foreground">
+                  Yes. Many clients prefer evening or weekend moves to avoid disruption. We can plan relocations outside standard office hours, including phased moves over several days.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">Do you provide packing materials and packing services?</h4>
+                <p className="text-sm text-muted-foreground">
+                  We can supply boxes, crates, wrapping materials, labels, and provide full packing and unpacking services. You decide what your team will handle and what you would like us to manage.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-semibold mb-1">What information do you need for a relocation quote?</h4>
+                <p className="text-sm text-muted-foreground">
+                  For an accurate relocation quote, we usually ask for current and new addresses, preferred move dates, approximate size of the premises, any heavy or specialist equipment, access details, and whether you need packing or unpacking services.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

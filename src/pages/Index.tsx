@@ -11,6 +11,7 @@ import heroImage from "@/assets/hero-truck.jpg";
 import { SEO } from "@/components/SEO";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { LocalBusinessSchema } from "@/components/StructuredData";
+import { SEO_DEFAULTS } from "@/lib/constants";
 
 const Index = () => {
   const services = [
@@ -18,48 +19,57 @@ const Index = () => {
       icon: Truck,
       title: "Spanish Road Transport",
       description: "Nationwide coverage with next-day delivery options",
-      priceRange: "€150",
+      priceRange: "€150+ per shipment",
+      badge: "Most Popular",
+      highlight: true,
     },
     {
       icon: Globe,
       title: "European Road Freight",
       description: "Cross-border logistics across 25+ European countries",
-      priceRange: "€450",
+      priceRange: "€450+ per shipment",
+      badge: "Best for EU lanes",
+      highlight: true,
     },
     {
       icon: Warehouse,
       title: "Relocation Services",
       description: "Business and office relocations with care",
-      priceRange: "€800",
+      priceRange: "€500+ per relocation project",
     },
     {
       icon: Ship,
       title: "Global Logistics",
       description: "Ocean and air freight worldwide",
-      priceRange: "€1,200",
+      priceRange: "€1,200+ per international shipment",
     },
     {
       icon: Warehouse,
       title: "Warehousing Solutions",
       description: "Secure storage facilities across Spain",
-      priceRange: "€200/mo",
+      priceRange: "€200+/month",
     },
     {
       icon: TrendingUp,
       title: "Supply Chain Consultancy",
       description: "Optimize your logistics operations",
-      priceRange: "€500",
+      priceRange: "€500+ per project",
     },
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SEO />
+      <SEO 
+        title={SEO_DEFAULTS.title}
+        description={SEO_DEFAULTS.description}
+        keywords={SEO_DEFAULTS.keywords}
+      />
       <LocalBusinessSchema />
       <Navigation />
       <WhatsAppButton />
       
       {/* Hero Section */}
+      <main id="main-content">
       <section className="relative min-h-[600px] flex items-center bg-gradient-to-br from-primary/5 to-primary/10">
         <div className="absolute inset-0 z-0">
           <img 
@@ -73,19 +83,23 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Spain & European Freight
-                <span className="text-primary block">Transport Solutions</span>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight">
+                Fresh Competition Since 2022.
+                <span className="text-primary block">
+                  Spain's Most Competitive Relocation & Logistics Partner. Delivering Across Europe.
+                </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-xl">
-                Reliable, cost-effective logistics for your business. From Madrid to Munich, we deliver on time, every time.
+                Still hungry. Still competitive. 3 years of delivering results Spanish clients deserve.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="text-lg">
                   <Link to="/get-quote">Get Free Quote</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="text-lg">
-                  <Link to="/services">View Services</Link>
+                  <Link to="/get-quote" state={{ serviceType: "relocation" }}>
+                    Plan Your Move
+                  </Link>
                 </Button>
               </div>
               <div className="flex items-center space-x-8 pt-4 text-sm text-muted-foreground">
@@ -95,7 +109,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="h-2 w-2 rounded-full bg-accent" />
-                  <span>Real-time Tracking</span>
+                  <span>Relocation Experts</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="h-2 w-2 rounded-full bg-accent" />
@@ -113,6 +127,66 @@ const Index = () => {
 
       {/* Trust Signals */}
       <TrustSignals />
+
+      <section id="relocation" className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Moving &amp; Relocation Services</h2>
+            <p className="text-lg text-muted-foreground">
+              Move your business or inventory across Spain and Europe with a partner that treats your cargo like its own. From office moves to warehouse relocations, we plan every step so your operations keep running with minimal downtime.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">End-to-end planning</h3>
+              <p className="text-sm text-muted-foreground">
+                Dedicated coordinators who plan your move from first survey to final delivery.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Professional packing &amp; handling</h3>
+              <p className="text-sm text-muted-foreground">
+                Trained crews, quality packing materials, and the right equipment for heavy, fragile, or high-value items.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Out-of-hours moves</h3>
+              <p className="text-sm text-muted-foreground">
+                Evening and weekend relocations to avoid disruption to your teams and customers.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Safe and compliant transport</h3>
+              <p className="text-sm text-muted-foreground">
+                Vehicles and routes selected for your load type, with insurance options tailored to your risk profile.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h3 className="font-semibold text-lg">Pan-European coverage</h3>
+              <p className="text-sm text-muted-foreground">
+                Reliable road and intermodal connections across Spain and all major European corridors.
+              </p>
+            </div>
+          </div>
+          <div className="text-center">
+            <p className="text-lg text-muted-foreground mb-6">
+              Ready to plan a move? Share your route, dates, and what you need to move, and we’ll prepare a tailored relocation plan and quote.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button asChild size="lg">
+                <Link to="/get-quote" state={{ serviceType: "relocation" }}>
+                  Plan Your Move
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <Link to="/contact">
+                  Talk to a Relocation Specialist
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Grid */}
       <section className="py-16 bg-background">
@@ -150,6 +224,7 @@ const Index = () => {
           </Button>
         </div>
       </section>
+      </main>
 
       <Footer />
     </div>
