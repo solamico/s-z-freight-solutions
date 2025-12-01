@@ -8,7 +8,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
 import GetQuote from "./pages/GetQuote";
-import TrackShipment from "./pages/TrackShipment";
+
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Relocation from "./pages/Relocation";
@@ -27,7 +27,6 @@ const routes = [
   { path: "/services", element: <Services />, spanishElement: <ServicesEs /> },
   { path: "/relocation", element: <Relocation />, spanishElement: <RelocationEs /> },
   { path: "/get-quote", element: <GetQuote />, spanishElement: <GetQuoteEs /> },
-  { path: "/track", element: <TrackShipment /> },
   { path: "/about", element: <About />, spanishElement: <AboutEs /> },
   { path: "/contact", element: <Contact />, spanishElement: <ContactEs /> },
 ];

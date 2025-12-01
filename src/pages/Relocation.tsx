@@ -7,6 +7,8 @@ import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { PageBreadcrumbs } from "@/components/PageBreadcrumbs";
 import { Truck, MapPin, Package, Clock, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import fleetRenaultVan from "@/assets/fleet-renault-van.jpg";
+import fleetMercedesSide from "@/assets/fleet-mercedes-side.jpg";
 
 const Relocation = () => {
   return (
@@ -49,6 +51,32 @@ const Relocation = () => {
 
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4 max-w-6xl">
+          {/* Fleet Images */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="relative h-72 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src={fleetRenaultVan} 
+                alt="Renault relocation van for business moves"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">Professional Relocation Vans</p>
+                <p className="text-white/80 text-sm">Equipped for safe office and warehouse moves</p>
+              </div>
+            </div>
+            <div className="relative h-72 rounded-lg overflow-hidden shadow-md">
+              <img 
+                src={fleetMercedesSide} 
+                alt="Mercedes Actros truck with tarp trailer for large relocations"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                <p className="text-white font-semibold">Large-Scale Relocations</p>
+                <p className="text-white/80 text-sm">Full articulated trucks for warehouse and industrial moves</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <Card className="lg:col-span-2">
               <CardHeader>
